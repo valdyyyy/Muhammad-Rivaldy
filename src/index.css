@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;1,300&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Dancing+Script:wght@400;700&display=swap');
+
+@theme {
+  --color-surface-bright: #fef8f8;
+  --color-surface-container: #f3ecec;
+  --color-on-surface: #1d1b1b;
+  --color-on-surface-variant: #4d4447;
+  --color-primary: #6b5a60;
+  --color-primary-container: #fce4ec;
+  --color-secondary: #715478;
+  --color-secondary-container: #f8d4fe;
+  --color-tertiary: #7b5549;
+  --color-tertiary-container: #ffe5dd;
+  --color-outline-variant: #d0c3c7;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-display: "Playfair Display", serif;
+  --font-cursive: "Epilogue", sans-serif;
+  --font-elegant: "Dancing Script", cursive;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-surface-bright text-on-surface antialiased overflow-x-hidden;
+  }
+}
+
+.glass {
+  @apply bg-white/40 backdrop-blur-xl border border-white/40 shadow-sm transition-all duration-300;
+}
+
+.glass-card {
+  @apply bg-white/30 backdrop-blur-2xl border border-white/50 shadow-lg hover:shadow-xl transition-all duration-500;
+}
+
+.polaroid {
+  @apply bg-white p-3 pb-8 shadow-md rounded-sm border border-neutral-100 transition-transform duration-500 hover:scale-105 hover:rotate-0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-surface-bright;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/30;
+}
